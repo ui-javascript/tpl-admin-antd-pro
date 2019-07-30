@@ -1,6 +1,10 @@
 import { Request, Response } from 'express';
-import city from './geographic/city.json';
-import province from './geographic/province.json';
+
+// import city from './geographic/city.json';
+// import province from './geographic/province.json';
+
+const city = require('./geographic/city.json');
+const province = require('./geographic/province.json');
 
 function getProvince(_: Request, res: Response) {
   return res.json(province);
