@@ -4,6 +4,7 @@
   "private": true,
   "description": "An out-of-box UI solution for enterprise applications",
   "scripts": {
+    "install:tyarn": "tyarn install",
     "analyze": "cross-env ANALYZE=1 umi build",
     "build": "umi build",
     "deploy": "cross-env ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION=site npm run site && npm run gh-pages",
