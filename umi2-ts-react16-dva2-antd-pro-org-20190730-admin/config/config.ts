@@ -83,41 +83,51 @@ export default {
   // umi routes: https://umijs.org/zh/guide/router.html
   routes: [
     {
+      path: '/user',
+      component: '../layouts/UserLayout',
+      routes: [
+        { path: '/user', redirect: '/user/login' },
+        {
+            name: 'user-login',
+            path: '/login',
+            component: './user-login',
+        },
+        // {
+        //   name: 'exception-404',
+        //   path: '/exception-404',
+        //   component: './exception-404',
+        // },
+      ]
+    },
+
+    {
       path: '/',
       component: '../layouts/BasicLayout',
       Routes: ['src/pages/Authorized'],
       authority: ['admin', 'user'],
       routes: [
         {
+          path: '/',
+          name: 'welcome',
+          icon: 'smile',
+          component: './Welcome',
+        },
+        {
           name: 'account-settings',
           path: '/account-settings',
           component: './account-settings',
         },
-        {
-          name: 'exception-404',
-          path: '/exception-404',
-          component: './exception-404',
-        },
+
         {
           name: 'exception-500',
           path: '/exception-500',
           component: './exception-500',
         },
-        {
-          name: 'user-login',
-          path: '/user-login',
-          component: './user-login',
-        },
+
         {
           name: 'table-list',
           path: '/table-list',
           component: './table-list',
-        },
-        {
-          path: '/',
-          name: 'welcome',
-          icon: 'smile',
-          component: './Welcome',
         },
         {
           component: './404',

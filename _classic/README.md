@@ -1,4 +1,3 @@
 # README
 
-
-- JS经典版本
+- antd-pro-JS经典版本
