@@ -8,4 +8,6 @@ umi block add Exception500
 
 umi block add UserLogin
 umi block add AccountSettings
+
+npx umi block add ListTableList
 ```

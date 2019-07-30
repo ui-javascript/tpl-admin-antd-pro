@@ -109,6 +109,11 @@ export default {
           component: './user-login',
         },
         {
+          name: 'table-list',
+          path: '/table-list',
+          component: './table-list',
+        },
+        {
           path: '/',
           name: 'welcome',
           icon: 'smile',
