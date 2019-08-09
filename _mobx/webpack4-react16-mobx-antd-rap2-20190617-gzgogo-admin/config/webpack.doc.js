@@ -71,7 +71,7 @@ module.exports = merge(common, {
           fallback: 'style-loader',
           use: [
             { loader: "css-loader" },
-            { 
+            {
               loader: "less-loader",
               options: {
                 javascriptEnabled: true
@@ -102,7 +102,7 @@ module.exports = merge(common, {
     hints: false
   },
   plugins: [
-    new CleanWebpackPlugin(['docs'], {
+    new CleanWebpackPlugin(['_docs'], {
       root: PATHS.root
     }),
     new HtmlWebPackPlugin({

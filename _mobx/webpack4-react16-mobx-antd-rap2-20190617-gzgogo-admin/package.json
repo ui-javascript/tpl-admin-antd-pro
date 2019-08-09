@@ -12,11 +12,6 @@
     "build": "webpack --progress --config config/webpack.prod.js",
     "doc": "webpack --progress --config config/webpack.doc.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.js": [
       "eslint"
@@ -41,7 +36,6 @@
     "eslint-plugin-react": "^7.11.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.1.0",
-    "husky": "^1.0.0-rc.14",
     "json-loader": "^0.5.7",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
