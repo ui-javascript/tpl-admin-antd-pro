@@ -27,3 +27,20 @@ export function setAuthority(authority: string | string[]): void {
   const proAuthority = typeof authority === 'string' ? [authority] : authority;
   return localStorage.setItem('antd-pro-authority', JSON.stringify(proAuthority));
 }
+//
+// export function getButtons() {
+//   return JSON.parse(localStorage.getItem('sword-buttons')) || [];
+// }
+//
+// export function getButton(code: number) {
+//   const buttons = getButtons();
+//   const data = buttons.filter(d => {
+//     return d.code === code;
+//   });
+//   return data.length === 0 ? [] : data[0].buttons;
+// }
+//
+// export function setButtons(buttons) {
+//   localStorage.removeItem('sword-buttons');
+//   localStorage.setItem('sword-buttons', JSON.stringify(buttons));
+// }
