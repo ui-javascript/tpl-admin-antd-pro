@@ -109,9 +109,6 @@ export default {
               path: '/user/register-result',
               component: './user/register-result',
             },
-            {
-              component: '404',
-            },
           ],
         },
         {
@@ -218,11 +215,6 @@ export default {
               name: 'profile',
               icon: 'profile',
               routes: [
-                {
-                  name: 'basic',
-                  path: '/profile/basic',
-                  component: './profile/basic',
-                },
                 {
                   name: 'basic',
                   path: '/profile/basic',
