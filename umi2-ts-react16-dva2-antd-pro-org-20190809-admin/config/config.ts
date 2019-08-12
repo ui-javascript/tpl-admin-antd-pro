@@ -73,9 +73,12 @@ if (isAntDesignProPreview) {
 export default {
   plugins,
   block: {
-    defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
+    // defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
+    defaultGitUrl: 'https://gitee.com/luo0412/pro-blocks',
+    // defaultGitUrl: 'https://luo0412.coding.net/p/pro-blocks',
     // 优先级低于 umi block add [block] --npm-client
-    npmClient: 'cnpm',
+    // npmClient: 'cnpm',
+    npmClient: 'tyarn',
   },
   hash: true,
   targets: {
@@ -97,6 +100,21 @@ export default {
               redirect: '/user/login',
             },
             {
+              name: 'login',
+              path: '/user/login',
+              component: './user/login',
+            },
+            {
+              name: 'register-result',
+              path: '/user/register-result',
+              component: './user/register-result',
+            },
+            {
+              name: 'register',
+              path: '/user/register',
+              component: './user/register',
+            },
+            {
               component: '404',
             },
           ],
@@ -111,13 +129,45 @@ export default {
               path: '/dashboard',
               name: 'dashboard',
               icon: 'dashboard',
-              routes: [],
+              routes: [
+                {
+                  name: 'analysis',
+                  path: '/dashboard/analysis',
+                  component: './dashboard/analysis',
+                },
+                {
+                  name: 'monitor',
+                  path: '/dashboard/monitor',
+                  component: './dashboard/monitor',
+                },
+                {
+                  name: 'workplace',
+                  path: '/dashboard/workplace',
+                  component: './dashboard/workplace',
+                },
+              ],
             },
             {
               path: '/form',
               icon: 'form',
               name: 'form',
-              routes: [],
+              routes: [
+                {
+                  name: 'basic-form',
+                  path: '/form/basic-form',
+                  component: './form/basic-form',
+                },
+                {
+                  name: 'step-form',
+                  path: '/form/step-form',
+                  component: './form/step-form',
+                },
+                {
+                  name: 'advanced-form',
+                  path: '/form/advanced-form',
+                  component: './form/advanced-form',
+                },
+              ],
             },
             {
               path: '/list',
@@ -133,7 +183,37 @@ export default {
                       path: '/list/search',
                       redirect: '/list/search/articles',
                     },
+                    {
+                      name: 'articles',
+                      path: '/list/search/articles',
+                      component: './list/search/articles',
+                    },
+                    {
+                      name: 'projects',
+                      path: '/list/search/projects',
+                      component: './list/search/projects',
+                    },
+                    {
+                      name: 'applications',
+                      path: '/list/search/applications',
+                      component: './list/search/applications',
+                    },
                   ],
+                },
+                {
+                  name: 'table-list',
+                  path: '/list/table-list',
+                  component: './list/table-list',
+                },
+                {
+                  name: 'basic-list',
+                  path: '/list/basic-list',
+                  component: './list/basic-list',
+                },
+                {
+                  name: 'card-list',
+                  path: '/list/card-list',
+                  component: './list/card-list',
                 },
               ],
             },
@@ -141,13 +221,30 @@ export default {
               path: '/profile',
               name: 'profile',
               icon: 'profile',
-              routes: [],
+              routes: [
+                {
+                  name: 'basic',
+                  path: '/profile/basic',
+                  component: './profile/basic',
+                },
+                {
+                  name: 'advanced',
+                  path: '/profile/advanced',
+                  component: './profile/advanced',
+                },
+              ],
             },
             {
               name: 'result',
               icon: 'check-circle-o',
               path: '/result',
-              routes: [],
+              routes: [
+                {
+                  name: 'success',
+                  path: '/result/success',
+                  component: './result/success',
+                },
+              ],
             },
             {
               name: 'exception',
