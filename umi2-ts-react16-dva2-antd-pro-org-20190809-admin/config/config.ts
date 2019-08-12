@@ -73,8 +73,8 @@ if (isAntDesignProPreview) {
 export default {
   plugins,
   block: {
-    // defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
-    defaultGitUrl: 'https://gitee.com/luo0412/pro-blocks',
+    defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
+    // defaultGitUrl: 'https://gitee.com/luo0412/pro-blocks',
     // defaultGitUrl: 'https://luo0412.coding.net/p/pro-blocks',
     // 优先级低于 umi block add [block] --npm-client
     // npmClient: 'cnpm',
@@ -108,11 +108,6 @@ export default {
               name: 'register-result',
               path: '/user/register-result',
               component: './user/register-result',
-            },
-            {
-              name: 'register',
-              path: '/user/register',
-              component: './user/register',
             },
             {
               component: '404',
@@ -153,6 +148,11 @@ export default {
               name: 'form',
               routes: [
                 {
+                  name: 'advanced-form',
+                  path: '/form/advanced-form',
+                  component: './form/advanced-form',
+                },
+                {
                   name: 'basic-form',
                   path: '/form/basic-form',
                   component: './form/basic-form',
@@ -161,11 +161,6 @@ export default {
                   name: 'step-form',
                   path: '/form/step-form',
                   component: './form/step-form',
-                },
-                {
-                  name: 'advanced-form',
-                  path: '/form/advanced-form',
-                  component: './form/advanced-form',
                 },
               ],
             },
@@ -200,20 +195,21 @@ export default {
                     },
                   ],
                 },
+
                 {
                   name: 'table-list',
                   path: '/list/table-list',
                   component: './list/table-list',
                 },
                 {
-                  name: 'basic-list',
-                  path: '/list/basic-list',
-                  component: './list/basic-list',
-                },
-                {
                   name: 'card-list',
                   path: '/list/card-list',
                   component: './list/card-list',
+                },
+                {
+                  name: 'basic-list',
+                  path: '/list/basic-list',
+                  component: './list/basic-list',
                 },
               ],
             },
@@ -222,6 +218,11 @@ export default {
               name: 'profile',
               icon: 'profile',
               routes: [
+                {
+                  name: 'basic',
+                  path: '/profile/basic',
+                  component: './profile/basic',
+                },
                 {
                   name: 'basic',
                   path: '/profile/basic',
@@ -244,25 +245,73 @@ export default {
                   path: '/result/success',
                   component: './result/success',
                 },
+                {
+                  name: 'fail',
+                  path: '/result/fail',
+                  component: './result/fail',
+                },
               ],
             },
             {
               name: 'exception',
               icon: 'warning',
               path: '/exception',
-              routes: [],
+              routes: [
+                {
+                  name: '403',
+                  path: '/exception/403',
+                  component: './exception/403',
+                },
+                {
+                  name: '404',
+                  path: '/exception/404',
+                  component: './exception/404',
+                },
+                {
+                  name: '500',
+                  path: '/exception/500',
+                  component: './exception/500',
+                },
+              ],
             },
             {
               name: 'account',
               icon: 'user',
               path: '/account',
-              routes: [],
+              routes: [
+                {
+                  name: 'center',
+                  path: '/account/center',
+                  component: './account/center',
+                },
+                {
+                  name: 'settings',
+                  path: '/account/settings',
+                  component: './account/settings',
+                },
+              ],
             },
             {
               name: 'editor',
               icon: 'highlight',
               path: '/editor',
-              routes: [],
+              routes: [
+                {
+                  name: 'flow',
+                  path: '/editor/flow',
+                  component: './editor/flow',
+                },
+                {
+                  name: 'koni',
+                  path: '/editor/koni',
+                  component: './editor/koni',
+                },
+                {
+                  name: 'mind',
+                  path: '/editor/mind',
+                  component: './editor/mind',
+                },
+              ],
             },
             {
               path: '/',
