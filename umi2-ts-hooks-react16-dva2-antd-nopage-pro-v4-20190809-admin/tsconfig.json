@@ -12,10 +12,13 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
+    // @adjust 20190814 放宽条件, 允许变量未使用
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "allowJs": true,
     "experimentalDecorators": true,
     "strict": true,
+    "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"]
     }

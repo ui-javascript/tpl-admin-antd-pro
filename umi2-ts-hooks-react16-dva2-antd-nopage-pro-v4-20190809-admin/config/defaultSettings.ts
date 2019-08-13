@@ -56,7 +56,7 @@ export default {
     locale: true,
   },
   collapse: true,
-  title: 'Ant Design Pro',
+  title: 'xxx中台管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
