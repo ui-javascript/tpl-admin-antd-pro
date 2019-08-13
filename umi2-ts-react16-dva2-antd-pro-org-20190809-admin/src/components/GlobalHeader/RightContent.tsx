@@ -48,6 +48,7 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = props => {
           console.log('enter', value);
         }}
       />
+
       <Tooltip
         title={formatMessage({
           id: 'component.globalHeader.help',
@@ -62,7 +63,9 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = props => {
           <Icon type="question-circle-o" />
         </a>
       </Tooltip>
-      <Avatar />
+
+      <Avatar className={styles.action} />
+
       <SelectLang className={styles.action} />
     </div>
   );

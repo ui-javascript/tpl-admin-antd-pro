@@ -77,8 +77,8 @@ export default {
     // defaultGitUrl: 'https://gitee.com/luo0412/pro-blocks',
     // defaultGitUrl: 'https://luo0412.coding.net/p/pro-blocks',
     // 优先级低于 umi block add [block] --npm-client
-    // npmClient: 'cnpm',
-    npmClient: 'tyarn',
+    npmClient: 'cnpm',
+    // npmClient: 'tyarn',
   },
   hash: true,
   targets: {

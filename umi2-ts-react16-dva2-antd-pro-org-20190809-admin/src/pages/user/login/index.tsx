@@ -85,6 +85,7 @@ class Login extends Component<
       if (!this.loginForm) {
         return;
       }
+
       this.loginForm.validateFields(['mobile'], {}, (err: any, values: FormDataType) => {
         if (err) {
           reject(err);
@@ -146,6 +147,7 @@ class Login extends Component<
               ]}
               onPressEnter={e => {
                 e.preventDefault();
+                // @ts-ignore
                 this.loginForm.validateFields(this.handleSubmit);
               }}
             />
