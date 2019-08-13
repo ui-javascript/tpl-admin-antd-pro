@@ -267,6 +267,11 @@ export default {
                   path: '/exception/exception-500',
                   component: './exception/exception-500',
                 },
+                // {
+                //   name: '测试',
+                //   path: '/exception/exception-test',
+                //   component: './exception/exception-test',
+                // },
               ],
             },
             {
