@@ -74,11 +74,7 @@ export default {
   plugins,
   block: {
     defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
-    // defaultGitUrl: 'https://gitee.com/luo0412/pro-blocks',
-    // defaultGitUrl: 'https://luo0412.coding.net/p/pro-blocks',
-    // 优先级低于 umi block add [block] --npm-client
     npmClient: 'cnpm',
-    // npmClient: 'tyarn',
   },
   hash: true,
   targets: {
@@ -105,14 +101,17 @@ export default {
               component: './user/login',
             },
             {
+              name: 'register-result',
+              path: '/user/register-result',
+              component: './user/register-result',
+            },
+            {
               name: 'register',
               path: '/user/register',
               component: './user/register',
             },
             {
-              name: 'register-result',
-              path: '/user/register-result',
-              component: './user/register-result',
+              component: '404',
             },
           ],
         },
@@ -150,11 +149,6 @@ export default {
               name: 'form',
               routes: [
                 {
-                  name: 'advanced-form',
-                  path: '/form/advanced-form',
-                  component: './form/advanced-form',
-                },
-                {
                   name: 'basic-form',
                   path: '/form/basic-form',
                   component: './form/basic-form',
@@ -163,6 +157,11 @@ export default {
                   name: 'step-form',
                   path: '/form/step-form',
                   component: './form/step-form',
+                },
+                {
+                  name: 'advanced-form',
+                  path: '/form/advanced-form',
+                  component: './form/advanced-form',
                 },
               ],
             },
@@ -197,21 +196,20 @@ export default {
                     },
                   ],
                 },
-
                 {
                   name: 'table-list',
                   path: '/list/table-list',
                   component: './list/table-list',
                 },
                 {
-                  name: 'card-list',
-                  path: '/list/card-list',
-                  component: './list/card-list',
-                },
-                {
                   name: 'basic-list',
                   path: '/list/basic-list',
                   component: './list/basic-list',
+                },
+                {
+                  name: 'card-list',
+                  path: '/list/card-list',
+                  component: './list/card-list',
                 },
               ],
             },
@@ -299,14 +297,14 @@ export default {
                   component: './editor/flow',
                 },
                 {
-                  name: 'koni',
-                  path: '/editor/koni',
-                  component: './editor/koni',
-                },
-                {
                   name: 'mind',
                   path: '/editor/mind',
                   component: './editor/mind',
+                },
+                {
+                  name: 'koni',
+                  path: '/editor/koni',
+                  component: './editor/koni',
                 },
               ],
             },
