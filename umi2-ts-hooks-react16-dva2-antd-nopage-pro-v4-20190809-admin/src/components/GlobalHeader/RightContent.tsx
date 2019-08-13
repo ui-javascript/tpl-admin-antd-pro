@@ -61,9 +61,9 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = props => {
           <Icon type="question-circle-o" />
         </a>
       </Tooltip>
+
       <NoticeIconView />
 
-      {/* @attention 退出操作加上menu */}
       <Avatar menu />
       <SelectLang className={styles.action} />
     </div>

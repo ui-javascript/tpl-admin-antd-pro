@@ -13,7 +13,7 @@ docker
 Dockerfile*
 .gitignore
 .prettierignore
-LICENSE
+_doc/LICENSE
 .eslintcache
 *.lock
 yarn-error.log

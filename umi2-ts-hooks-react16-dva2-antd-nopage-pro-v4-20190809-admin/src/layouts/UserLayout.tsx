@@ -31,6 +31,7 @@ const UserLayout: React.SFC<UserLayoutProps> = props => {
 
   return (
     <DocumentTitle
+      // @ts-ignore
       title={getPageTitle({
         pathname: location.pathname,
         breadcrumb,

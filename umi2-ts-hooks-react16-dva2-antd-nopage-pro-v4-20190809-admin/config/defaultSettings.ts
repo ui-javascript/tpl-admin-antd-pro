@@ -1,3 +1,4 @@
+// @ts-ignore
 import { MenuTheme } from 'antd/es/menu';
 
 export type ContentWidth = 'Fluid' | 'Fixed';
@@ -47,14 +48,16 @@ export default {
   primaryColor: '#1890FF',
   layout: 'sidemenu',
   contentWidth: 'Fluid',
-  fixedHeader: false,
+  fixedHeader: true,
   autoHideHeader: false,
-  fixSiderbar: false,
+  fixSiderbar: true,
   colorWeak: false,
   menu: {
     locale: true,
   },
+  collapse: true,
   title: 'Ant Design Pro',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;
+
