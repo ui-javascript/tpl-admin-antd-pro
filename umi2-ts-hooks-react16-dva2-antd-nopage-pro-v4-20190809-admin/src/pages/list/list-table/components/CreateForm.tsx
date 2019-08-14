@@ -10,6 +10,7 @@ interface CreateFormProps extends FormComponentProps {
   handleAdd: (fieldsValue: { desc: string }) => void;
   handleModalVisible: () => void;
 }
+
 const CreateForm: React.FC<CreateFormProps> = props => {
   const { modalVisible, form, handleAdd, handleModalVisible } = props;
   const okHandle = () => {

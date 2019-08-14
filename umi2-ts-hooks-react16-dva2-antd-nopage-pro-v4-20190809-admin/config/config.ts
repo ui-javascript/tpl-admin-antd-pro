@@ -125,7 +125,7 @@ export default {
             {
               path: '/demo',
               name: 'demo',
-              icon: 'dashboard',
+              icon: 'robot',
               component: './_demo',
             },
             {
