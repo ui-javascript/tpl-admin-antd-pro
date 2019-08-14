@@ -15,7 +15,7 @@
     // @adjust 20190814 放宽条件, 允许变量未使用
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    // 言下之意, 悄悄用JS也是可以的
+    // 言下之意, 悄悄地用JavaScript也是可以的...
     "allowJs": true,
     "experimentalDecorators": true,
     "strict": true,
