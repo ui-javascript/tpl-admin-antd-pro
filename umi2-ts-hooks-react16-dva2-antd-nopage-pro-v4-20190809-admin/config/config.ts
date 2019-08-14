@@ -123,6 +123,12 @@ export default {
           authority: ['admin', 'user'],
           routes: [
             {
+              path: '/demo',
+              name: 'demo',
+              icon: 'dashboard',
+              component: './_demo',
+            },
+            {
               path: '/dashboard',
               name: 'dashboard',
               icon: 'dashboard',
