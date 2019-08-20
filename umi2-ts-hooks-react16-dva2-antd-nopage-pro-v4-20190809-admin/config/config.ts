@@ -75,6 +75,7 @@ export default {
   block: {
     defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
     npmClient: 'cnpm',
+    // npmClient: 'tyarn',
   },
   hash: true,
   targets: {
@@ -121,6 +122,12 @@ export default {
           Routes: ['src/pages/Authorized'],
           authority: ['admin', 'user'],
           routes: [
+            {
+              path: '/demo',
+              name: 'demo',
+              icon: 'robot',
+              component: './_demo',
+            },
             {
               path: '/dashboard',
               name: 'dashboard',
@@ -346,7 +353,7 @@ export default {
         resourcePath: string;
       },
       _: string,
-      localName: string
+      localName: string,
     ) => {
       if (
         context.resourcePath.includes('node_modules') ||

@@ -119,6 +119,8 @@ dependency-reduced-pom.xml
 ### 自定义 ###
 rebel.xml
 __tmp
-upload
-uploads
+# upload
+# uploads
 out
+.umi
+.umi-production
