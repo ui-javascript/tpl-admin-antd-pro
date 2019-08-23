@@ -166,7 +166,9 @@ const List = (props: TableListProps) => {
   return (
     <PageHeaderWrapper>
       <Row style={{ marginBottom: 15 }} type="flex" justify="space-between" >
-        <Col><SearchForm handleSubmit={submit} /></Col>
+        <Col>
+          <SearchForm handleSubmit={submit} />
+        </Col>
         <Col>
           <Button icon="plus" type="primary" onClick={() => handleProduct()}>新建</Button>
         </Col>
@@ -181,6 +183,7 @@ const List = (props: TableListProps) => {
         loading={!!loading}
         onChange={handleStandardTableChange}
       />
+
       {/* <ChangeCategoryNameModal
         submit={(v: any) => submitCategoryName(v)}
         visible={modalShow}
@@ -195,6 +198,7 @@ const List = (props: TableListProps) => {
                           categoryPath={categoryPath}
                         />
       } */}
+    
     </PageHeaderWrapper>
   )
 }

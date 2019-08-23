@@ -68,6 +68,7 @@ const Model: ModelType = {
       const response = yield call(setProductStatus, payload)
       if (response.status === 0) {
         message.success(response.data || '修改产品状态成功')
+        
         const state = yield select(state => state)
 
         // 不需要重新请求列表，直接修改本地列表数据 Immutable.js提高效率?
