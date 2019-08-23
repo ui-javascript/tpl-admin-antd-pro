@@ -12,11 +12,6 @@ interface userListProps {
   user: UserState
 }
 
-interface userListProps {
-  dispatch: Dispatch<any>;
-  user: UserState
-}
-
 const UserList = (props: userListProps) => {
   const [selectedRows, SetRows] = useState([])
 
@@ -100,10 +95,8 @@ const UserList = (props: userListProps) => {
 }
 
 export default connect(
-  ({
-    user
-  }: {
-    user: UserListItemParams;
+  ({ user }: {
+    user: UserListItemParams
   }) => ({
     user
   })

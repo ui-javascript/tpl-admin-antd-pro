@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Search from './Search';
 import { Tree, Spin } from 'antd';
 
@@ -18,24 +17,7 @@ export default class ListTree extends React.Component {
     handleSelectAll: noop
   };
 
-  static propTypes = {
-    prefixCls: PropTypes.string,
-    treeData: PropTypes.array,
-    selectedKeys: PropTypes.array,
-    showSearch: PropTypes.bool,
-    searchPlaceholder: PropTypes.string,
-    titleText: PropTypes.string,
-    treeKey: PropTypes.string,
-    treeTitleKey: PropTypes.string,
-    style: PropTypes.object,
-    handleClear: PropTypes.func,
-    notFoundContent: PropTypes.string,
-    filter: PropTypes.string,
-    handleFilter: PropTypes.func,
-    treeRender: PropTypes.func,
-    loading: PropTypes.bool,
-    flatTreeData: PropTypes.array
-  };
+
 
   state = {
     expandedKeys: [],

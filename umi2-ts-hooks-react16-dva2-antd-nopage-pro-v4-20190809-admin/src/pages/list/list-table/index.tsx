@@ -29,8 +29,10 @@ import StandardTable, { StandardTableColumnProps } from './components/StandardTa
 import UpdateForm, { FormValsType } from './components/UpdateForm';
 import { TableListItem, TableListPagination, TableListParams } from './data.d';
 
+// 去空格
+import withBlurTrimFormItem from '@/components/_utils/withBlurTrimFormItem';
+
 import styles from './style.less';
-import withFieldBlurTrim from '@/components/_utils/withFieldBlurTrim';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -43,7 +45,7 @@ type IStatusMapType = 'default' | 'processing' | 'success' | 'error';
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
 
-const TrimInput = withFieldBlurTrim(Input);
+const TrimInput = withBlurTrimFormItem(Input);
 
 interface TableListProps extends FormComponentProps {
   dispatch: Dispatch<any>;

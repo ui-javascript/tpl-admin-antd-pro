@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 
-const withFieldBlurTrim = WrappedComponent =>
+const withBlurTrimFormItem = WrappedComponent =>
   class WrapperComponent extends Component {
     // 去除头尾空格
     handleBlur = e => {
@@ -17,4 +17,4 @@ const withFieldBlurTrim = WrappedComponent =>
     }
   };
 
-export default withFieldBlurTrim;
+export default withBlurTrimFormItem;

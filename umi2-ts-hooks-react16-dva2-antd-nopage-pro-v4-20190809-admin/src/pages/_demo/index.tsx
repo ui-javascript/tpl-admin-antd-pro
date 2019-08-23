@@ -30,7 +30,7 @@ import UpdateForm, { FormValsType } from './components/UpdateForm';
 import { TableListItem, TableListPagination, TableListParams } from './data.d';
 
 import styles from './style.less';
-import withFieldBlurTrim from '@/components/_utils/withFieldBlurTrim';
+import withBlurTrimFormItem from '@/components/_utils/withBlurTrimFormItem';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -44,7 +44,7 @@ const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
 
 // 去除首位空格
-const TrimInput = withFieldBlurTrim(Input);
+const TrimInput = withBlurTrimFormItem(Input);
 
 interface TableListProps extends FormComponentProps {
   dispatch: Dispatch<any>;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import List from './List';
 import ListTree from './ListTree';
 import { Icon } from 'antd';
@@ -19,27 +18,6 @@ export default class Index extends React.Component {
     showSearch: false,
     footer: noop,
     loading: false
-  };
-
-  static propTypes = {
-    prefixCls: PropTypes.string,
-    dataSource: PropTypes.array,
-    targetNodes: PropTypes.array,
-    onChange: PropTypes.func,
-    listStyle: PropTypes.object,
-    listRender: PropTypes.func,
-    treeKey: PropTypes.string,
-    treeTitleKey: PropTypes.string,
-    className: PropTypes.string,
-    titleText: PropTypes.string,
-    showSearch: PropTypes.bool,
-    searchPlaceholder: PropTypes.string,
-    notFoundContent: PropTypes.node,
-    footer: PropTypes.func,
-    treeRender: PropTypes.func,
-    loadData: PropTypes.func,
-    loading: PropTypes.bool,
-    asyncSearch: PropTypes.func,
   };
 
   constructor(props) {
@@ -100,6 +78,7 @@ export default class Index extends React.Component {
   };
 
   handleLeftFilter = v => this.handleFilter('left', v);
+
   handleRightFilter = v => this.handleFilter('right', v);
 
   handleClear = direction => {
@@ -109,6 +88,7 @@ export default class Index extends React.Component {
   };
 
   handleRightClear = () => this.handleClear('right');
+
   handleDeleteItem = nodes => {
     const { treeKey } = this.props;
     const targetNodes = this.state.targetNodes.filter(
@@ -126,7 +106,7 @@ export default class Index extends React.Component {
 
   onTreeSelected = selectedNodes => {
     const { treeKey, treeTitleKey } = this.props;
-    let targetNodes = selectedNodes.map(node => ({
+    const targetNodes = selectedNodes.map(node => ({
       [treeKey]: node[treeKey],
       [treeTitleKey]: node[treeTitleKey],
       ...node.props

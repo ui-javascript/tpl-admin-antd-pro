@@ -74,7 +74,10 @@ export default modelEnhance({
       success();
     },
     // 修改
-    *update({ payload }, { call, put }) {},
+    // eslint-disable-next-line no-empty-function
+    *update({ payload }, { call, put }) {
+
+    },
     // 删除 之后查询分页
     *remove({ payload }, { call, put, select }) {
       const { records, success } = payload;
