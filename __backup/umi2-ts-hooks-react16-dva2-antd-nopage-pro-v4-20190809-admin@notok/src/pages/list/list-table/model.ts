@@ -69,7 +69,6 @@ const Model: ModelType = {
       });
       if (callback) callback();
     },
-
   },
 
   reducers: {

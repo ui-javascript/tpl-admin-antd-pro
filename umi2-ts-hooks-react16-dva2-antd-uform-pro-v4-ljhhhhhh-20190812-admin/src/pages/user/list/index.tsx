@@ -81,6 +81,7 @@ const UserList = (props: userListProps) => {
 
   return (
     <PageHeaderWrapper>
+
       <StandardTable
         data={data}
         rowKey="id"
@@ -90,6 +91,7 @@ const UserList = (props: userListProps) => {
         loading={loading}
         onChange={handleStandardTableChange}
       />
+
     </PageHeaderWrapper>
   )
 }

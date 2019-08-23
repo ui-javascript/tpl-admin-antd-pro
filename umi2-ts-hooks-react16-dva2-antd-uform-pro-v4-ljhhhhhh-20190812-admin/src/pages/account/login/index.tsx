@@ -1,11 +1,12 @@
 import { Icon } from "antd";
-import { formatMessage } from "umi-plugin-react/locale"; // FormattedMessage,
-import React, { Component } from "react";
-import SchemaForm, { Field, FormButtonGroup, Submit, Reset } from "@uform/antd";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
-import { Dispatch } from "redux";
-import { connect } from "dva";
-import styles from "./style.less";
+// FormattedMessage
+import { formatMessage } from "umi-plugin-react/locale"
+import React, { Component } from "react"
+import SchemaForm, { Field, FormButtonGroup, Submit, Reset } from "@uform/antd"
+import { CheckboxChangeEvent } from "antd/es/checkbox"
+import { Dispatch } from "redux"
+import { connect } from "dva"
+import styles from "./style.less"
 
 interface StateType {
   status?: number;
@@ -27,11 +28,7 @@ export interface FormDataType {
   isAdmin: boolean;
 }
 
-@connect(
-  ({
-    account,
-    loading
-  }: {
+@connect(({ account, loading }: {
     account: StateType;
     loading: {
       effects: {
@@ -70,6 +67,7 @@ class Login extends Component<LoginProps, LoginState> {
     // const { userLogin, submitting } = this.props;
     // const { status } = userLogin;
     // const { autoLogin } = this.state;
+    
     return (
       <div className={styles.main}>
         <SchemaForm layout="vertical" onSubmit={this.handleSubmit} defaultValue={{isAdmin: true}}>
