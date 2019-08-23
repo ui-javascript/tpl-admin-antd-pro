@@ -321,6 +321,18 @@ export default {
               ],
             },
             {
+              name: 'curd',
+              icon: 'highlight',
+              path: '/crud',
+              routes: [
+                {
+                  name: 'skin',
+                  path: '/crud/crud-skin',
+                  component: './crud/crud-skin',
+                },
+              ],
+            },
+            {
               path: '/',
               redirect: '/dashboard/dashboard-analysis',
               authority: ['admin', 'user'],
