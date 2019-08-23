@@ -190,13 +190,16 @@ class TableList extends Component<TableListProps, TableListState> {
   handleFormReset = () => {
     const { form, dispatch } = this.props;
     form.resetFields();
+
     this.setState({
       formValues: {},
     });
+
     dispatch({
       type: 'listTableList/fetch',
       payload: {},
     });
+
   };
 
   toggleForm = () => {

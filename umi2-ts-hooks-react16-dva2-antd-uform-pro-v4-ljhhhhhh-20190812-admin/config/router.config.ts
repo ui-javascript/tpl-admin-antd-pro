@@ -6,7 +6,7 @@ export default [
       {
         name: 'login',
         path: '/account/login',
-        component: './Account/login',
+        component: './account/login',
       },
     ],
   },
@@ -15,11 +15,11 @@ export default [
     routes: [
       {
         path: '/exception/404',
-        component: './Exception/404',
+        component: './exception/404',
       },
       {
         path: '/exception/403',
-        component: './Exception/403',
+        component: './exception/403',
       },
     ],
   },
@@ -42,19 +42,19 @@ export default [
         routes: [
           {
             name: 'productList',
-            path: '/product/product',
-            component: './Product/product',
+            path: '/product/list',
+            component: './product/list',
           },
           {
             name: 'createProduct',
             path: '/product/create',
-            component: './Product/product/create',
+            component: './product/list/create',
             hideInMenu: true,
           },
           {
             name: 'category',
             path: '/product/category',
-            component: './Product/category',
+            component: './product/category',
           },
         ],
       },
@@ -62,12 +62,12 @@ export default [
         name: 'user',
         path: '/user',
         icon: 'user',
-        component: './User/list',
+        component: './user/list',
         authority: 'admin',
       },
     ],
   },
   {
-    component: './Exception/404',
+    component: './exception/404',
   },
 ];
