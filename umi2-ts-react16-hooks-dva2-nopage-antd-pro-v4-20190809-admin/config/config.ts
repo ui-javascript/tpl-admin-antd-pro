@@ -93,22 +93,22 @@ export default {
           routes: [
             {
               path: '/user',
-              redirect: '/user/login',
+              redirect: '/user/user-login',
             },
             {
               name: 'login',
-              path: '/user/login',
-              component: './user/login',
+              path: '/user/user-login',
+              component: './user/user-login',
             },
             {
               name: 'register-result',
-              path: '/user/register-result',
-              component: './user/register-result',
+              path: '/user/user-register-result',
+              component: './user/user-register-result',
             },
             {
               name: 'register',
-              path: '/user/register',
-              component: './user/register',
+              path: '/user/user-register',
+              component: './user/user-register',
             },
             {
               component: '404',
@@ -128,18 +128,18 @@ export default {
               routes: [
                 {
                   name: 'analysis',
-                  path: '/dashboard/analysis',
-                  component: './dashboard/analysis',
+                  path: '/dashboard/dashboard-analysis',
+                  component: './dashboard/dashboard-analysis',
                 },
                 {
                   name: 'monitor',
-                  path: '/dashboard/monitor',
-                  component: './dashboard/monitor',
+                  path: '/dashboard/dashboard-monitor',
+                  component: './dashboard/dashboard-monitor',
                 },
                 {
                   name: 'workplace',
-                  path: '/dashboard/workplace',
-                  component: './dashboard/workplace',
+                  path: '/dashboard/dashboard-workplace',
+                  component: './dashboard/dashboard-workplace',
                 },
               ],
             },
@@ -150,18 +150,18 @@ export default {
               routes: [
                 {
                   name: 'basic-form',
-                  path: '/form/basic-form',
-                  component: './form/basic-form',
+                  path: '/form/form-basic',
+                  component: './form/form-basic',
                 },
                 {
                   name: 'step-form',
-                  path: '/form/step-form',
-                  component: './form/step-form',
+                  path: '/form/form-step',
+                  component: './form/form-step',
                 },
                 {
                   name: 'advanced-form',
-                  path: '/form/advanced-form',
-                  component: './form/advanced-form',
+                  path: '/form/form-advanced',
+                  component: './form/form-advanced',
                 },
               ],
             },
@@ -176,40 +176,40 @@ export default {
                   component: './list/search',
                   routes: [
                     {
-                      path: '/list/search',
-                      redirect: '/list/search/articles',
+                      path: '/list/list-search',
+                      redirect: '/list/search/list-articles',
                     },
                     {
                       name: 'articles',
-                      path: '/list/search/articles',
-                      component: './list/search/articles',
+                      path: '/list/search/list-articles',
+                      component: './list/search/list-articles',
                     },
                     {
                       name: 'projects',
-                      path: '/list/search/projects',
-                      component: './list/search/projects',
+                      path: '/list/search/list-projects',
+                      component: './list/search/list-projects',
                     },
                     {
                       name: 'applications',
-                      path: '/list/search/applications',
-                      component: './list/search/applications',
+                      path: '/list/search/list-applications',
+                      component: './list/search/list-applications',
                     },
                   ],
                 },
                 {
                   name: 'table-list',
-                  path: '/list/table-list',
-                  component: './list/table-list',
+                  path: '/list/list-table',
+                  component: './list/list-table',
                 },
                 {
                   name: 'basic-list',
-                  path: '/list/basic-list',
-                  component: './list/basic-list',
+                  path: '/list/list-basic',
+                  component: './list/list-basic',
                 },
                 {
                   name: 'card-list',
-                  path: '/list/card-list',
-                  component: './list/card-list',
+                  path: '/list/list-card',
+                  component: './list/list-card',
                 },
               ],
             },
@@ -220,13 +220,13 @@ export default {
               routes: [
                 {
                   name: 'basic',
-                  path: '/profile/basic',
-                  component: './profile/basic',
+                  path: '/profile/profile-basic',
+                  component: './profile/profile-basic',
                 },
                 {
                   name: 'advanced',
-                  path: '/profile/advanced',
-                  component: './profile/advanced',
+                  path: '/profile/profile-advanced',
+                  component: './profile/profile-advanced',
                 },
               ],
             },
@@ -237,13 +237,13 @@ export default {
               routes: [
                 {
                   name: 'success',
-                  path: '/result/success',
-                  component: './result/success',
+                  path: '/result/result-success',
+                  component: './result/result-success',
                 },
                 {
                   name: 'fail',
-                  path: '/result/fail',
-                  component: './result/fail',
+                  path: '/result/result-fail',
+                  component: './result/result-fail',
                 },
               ],
             },
@@ -254,18 +254,18 @@ export default {
               routes: [
                 {
                   name: '403',
-                  path: '/exception/403',
-                  component: './exception/403',
+                  path: '/exception/exception-403',
+                  component: './exception/exception-403',
                 },
                 {
                   name: '404',
-                  path: '/exception/404',
-                  component: './exception/404',
+                  path: '/exception/exception-404',
+                  component: './exception/exception-404',
                 },
                 {
                   name: '500',
-                  path: '/exception/500',
-                  component: './exception/500',
+                  path: '/exception/exception-500',
+                  component: './exception/exception-500',
                 },
               ],
             },
@@ -276,13 +276,13 @@ export default {
               routes: [
                 {
                   name: 'center',
-                  path: '/account/center',
-                  component: './account/center',
+                  path: '/account/account-center',
+                  component: './account/account-center',
                 },
                 {
                   name: 'settings',
-                  path: '/account/settings',
-                  component: './account/settings',
+                  path: '/account/account-settings',
+                  component: './account/account-settings',
                 },
               ],
             },
@@ -293,24 +293,24 @@ export default {
               routes: [
                 {
                   name: 'flow',
-                  path: '/editor/flow',
-                  component: './editor/flow',
+                  path: '/editor/editor-flow',
+                  component: './editor/editor-flow',
                 },
                 {
                   name: 'mind',
-                  path: '/editor/mind',
-                  component: './editor/mind',
+                  path: '/editor/editor-mind',
+                  component: './editor/editor-mind',
                 },
                 {
                   name: 'koni',
-                  path: '/editor/koni',
-                  component: './editor/koni',
+                  path: '/editor/editor-koni',
+                  component: './editor/editor-koni',
                 },
               ],
             },
             {
               path: '/',
-              redirect: '/dashboard/analysis',
+              redirect: '/dashboard/dashboard-analysis',
               authority: ['admin', 'user'],
             },
             {
@@ -341,7 +341,7 @@ export default {
         resourcePath: string;
       },
       _: string,
-      localName: string
+      localName: string,
     ) => {
       if (
         context.resourcePath.includes('node_modules') ||

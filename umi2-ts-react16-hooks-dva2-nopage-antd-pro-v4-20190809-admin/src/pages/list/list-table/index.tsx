@@ -1,3 +1,4 @@
+import React, { Component, Fragment } from 'react';
 import {
   Badge,
   Button,
@@ -15,7 +16,6 @@ import {
   Select,
   message,
 } from 'antd';
-import React, { Component, Fragment } from 'react';
 
 import { Dispatch } from 'redux';
 import { FormComponentProps } from 'antd/es/form';
@@ -23,6 +23,7 @@ import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { SorterResult } from 'antd/es/table';
 import { connect } from 'dva';
 import moment from 'moment';
+
 import { StateType } from './model';
 import CreateForm from './components/CreateForm';
 import StandardTable, { StandardTableColumnProps } from './components/StandardTable';
@@ -33,15 +34,18 @@ import styles from './style.less';
 
 const FormItem = Form.Item;
 const { Option } = Select;
+// 拼接对象内容
 const getValue = (obj: { [x: string]: string[] }) =>
   Object.keys(obj)
     .map(key => obj[key])
     .join(',');
 
+// 状态
 type IStatusMapType = 'default' | 'processing' | 'success' | 'error';
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
 
+// 查询列
 interface TableListProps extends FormComponentProps {
   dispatch: Dispatch<any>;
   loading: boolean;
