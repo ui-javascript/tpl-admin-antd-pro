@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { FormComponentProps } from 'antd/es/form';
 import { TableListItem } from '../data.d';
 
+// 表单
 export interface FormValsType extends Partial<TableListItem> {
   target?: string;
   template?: string;
@@ -18,6 +19,7 @@ export interface UpdateFormProps extends FormComponentProps {
   updateModalVisible: boolean;
   values: Partial<TableListItem>;
 }
+
 const FormItem = Form.Item;
 const { Step } = Steps;
 const { TextArea } = Input;
@@ -25,17 +27,21 @@ const { Option } = Select;
 const RadioGroup = Radio.Group;
 
 export interface UpdateFormState {
+  // 表单
   formVals: FormValsType;
+  // 当前步数
   currentStep: number;
 }
 
 class UpdateForm extends Component<UpdateFormProps, UpdateFormState> {
+  // 默认值
   static defaultProps = {
     handleUpdate: () => {},
     handleUpdateModalVisible: () => {},
     values: {},
   };
 
+  // 布局
   formLayout = {
     labelCol: { span: 7 },
     wrapperCol: { span: 13 },
@@ -80,6 +86,7 @@ class UpdateForm extends Component<UpdateFormProps, UpdateFormState> {
     });
   };
 
+  // 后退
   backward = () => {
     const { currentStep } = this.state;
     this.setState({
@@ -87,6 +94,7 @@ class UpdateForm extends Component<UpdateFormProps, UpdateFormState> {
     });
   };
 
+  // 前进
   forward = () => {
     const { currentStep } = this.state;
     this.setState({

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { MenuTheme } from 'antd/es/menu';
 
 export type ContentWidth = 'Fluid' | 'Fixed';
@@ -54,7 +55,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: 'xxx中台管理系统',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

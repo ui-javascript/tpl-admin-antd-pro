@@ -6,21 +6,30 @@ import React from 'react';
 const FormItem = Form.Item;
 
 interface CreateFormProps extends FormComponentProps {
+  // 弹框
   modalVisible: boolean;
-  handleAdd: (fieldsValue: { desc: string }) => void;
+  // 父组件控制弹框的开关
   handleModalVisible: () => void;
+  // 新增
+  handleAdd: (fieldsValue: { desc: string }) => void;
 }
+
+// FC = FunctionCompnent
 const CreateForm: React.FC<CreateFormProps> = props => {
   const { modalVisible, form, handleAdd, handleModalVisible } = props;
+  // 提交
   const okHandle = () => {
     form.validateFields((err, fieldsValue) => {
       if (err) return;
-      form.resetFields();
+
+      // 表单重置
+      // form.resetFields();
       handleAdd(fieldsValue);
     });
   };
   return (
     <Modal
+      // 关闭销毁
       destroyOnClose
       title="新建规则"
       visible={modalVisible}

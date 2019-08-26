@@ -4,6 +4,7 @@ import { addRule, queryRule, removeRule, updateRule } from './service';
 
 import { TableListData } from './data.d';
 
+// 数据类型
 export interface StateType {
   data: TableListData;
 }

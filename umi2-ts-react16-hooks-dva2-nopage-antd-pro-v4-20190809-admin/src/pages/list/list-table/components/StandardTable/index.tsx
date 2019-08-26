@@ -5,6 +5,7 @@ import React, { Component, Fragment } from 'react';
 import { TableListItem } from '../../data.d';
 import styles from './index.less';
 
+// ??
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 export interface StandardTableProps<T> extends Omit<TableProps<T>, 'columns'> {
@@ -18,7 +19,9 @@ export interface StandardTableProps<T> extends Omit<TableProps<T>, 'columns'> {
 }
 
 export interface StandardTableColumnProps extends ColumnProps<TableListItem> {
+  // 是否合计
   needTotal?: boolean;
+  // 总数
   total?: number;
 }
 
@@ -42,8 +45,9 @@ interface StandardTableState {
 
 class StandardTable extends Component<StandardTableProps<TableListItem>, StandardTableState> {
   static getDerivedStateFromProps(nextProps: StandardTableProps<TableListItem>) {
-    // clean state
+    // clean state：当状态被清空时
     if (nextProps.selectedRows.length === 0) {
+      // 合计
       const needTotalList = initTotalList(nextProps.columns);
       return {
         selectedRowKeys: [],
@@ -82,6 +86,7 @@ class StandardTable extends Component<StandardTableProps<TableListItem>, Standar
     this.setState({ selectedRowKeys: currySelectedRowKeys, needTotalList });
   };
 
+  // 表格change事件
   handleTableChange: TableProps<TableListItem>['onChange'] = (
     pagination,
     filters,
@@ -94,6 +99,7 @@ class StandardTable extends Component<StandardTableProps<TableListItem>, Standar
     }
   };
 
+  // 清空表格选中项
   cleanSelectedKeys = () => {
     if (this.handleRowSelectChange) {
       this.handleRowSelectChange([], []);
@@ -107,6 +113,7 @@ class StandardTable extends Component<StandardTableProps<TableListItem>, Standar
 
     const paginationProps = pagination
       ? {
+          // 分页默认显示项
           showSizeChanger: true,
           showQuickJumper: true,
           ...pagination,
@@ -116,6 +123,7 @@ class StandardTable extends Component<StandardTableProps<TableListItem>, Standar
     const rowSelection: TableRowSelection<TableListItem> = {
       selectedRowKeys,
       onChange: this.handleRowSelectChange,
+      // 表单禁用
       getCheckboxProps: (record: TableListItem) => ({
         disabled: record.disabled,
       }),

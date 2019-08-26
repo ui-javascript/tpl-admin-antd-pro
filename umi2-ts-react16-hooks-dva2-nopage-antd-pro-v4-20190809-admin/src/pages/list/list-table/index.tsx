@@ -45,19 +45,28 @@ type IStatusMapType = 'default' | 'processing' | 'success' | 'error';
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
 
-// 查询列
+// 本组件props
 interface TableListProps extends FormComponentProps {
+  // dispatch调用
   dispatch: Dispatch<any>;
+  // 本组件的加载状态
   loading: boolean;
+  // 本组件的数据
   listTableList: StateType;
 }
 
+// 本组件state
 interface TableListState {
+  // 弹框
   modalVisible: boolean;
   updateModalVisible: boolean;
+  // 高级搜索
   expandForm: boolean;
+  // 选中项
   selectedRows: TableListItem[];
+  // 关键词
   formValues: { [key: string]: string };
+  // 分步表单(可选)
   stepFormValues: Partial<TableListItem>;
 }
 
@@ -70,6 +79,7 @@ interface TableListState {
     listTableList: StateType;
     loading: {
       models: {
+        // 字符串键 布尔值为值的对象
         [key: string]: boolean;
       };
     };
@@ -156,6 +166,7 @@ class TableList extends Component<TableListProps, TableListState> {
     });
   }
 
+  // table的change事件
   handleStandardTableChange = (
     pagination: Partial<TableListPagination>,
     filtersArg: Record<keyof TableListItem, string[]>,
@@ -176,6 +187,8 @@ class TableList extends Component<TableListProps, TableListState> {
       ...formValues,
       ...filters,
     };
+
+    // 排序规则
     if (sorter.field) {
       params.sorter = `${sorter.field}_${sorter.order}`;
     }
@@ -188,7 +201,9 @@ class TableList extends Component<TableListProps, TableListState> {
 
   handleFormReset = () => {
     const { form, dispatch } = this.props;
+    // 表单上重置
     form.resetFields();
+    // 状态上重置
     this.setState({
       formValues: {},
     });
@@ -211,6 +226,7 @@ class TableList extends Component<TableListProps, TableListState> {
 
     if (!selectedRows) return;
     switch (e.key) {
+      // 删除
       case 'remove':
         dispatch({
           type: 'listTableList/remove',
@@ -224,6 +240,9 @@ class TableList extends Component<TableListProps, TableListState> {
           },
         });
         break;
+      // 审批
+      case 'approval':
+        break;
       default:
         break;
     }
@@ -236,6 +255,7 @@ class TableList extends Component<TableListProps, TableListState> {
   };
 
   handleSearch = (e: React.FormEvent) => {
+    // 阻止默认表单提交
     e.preventDefault();
 
     const { dispatch, form } = this.props;
@@ -245,6 +265,7 @@ class TableList extends Component<TableListProps, TableListState> {
 
       const values = {
         ...fieldsValue,
+        // 转成时间戳
         updatedAt: fieldsValue.updatedAt && fieldsValue.updatedAt.valueOf(),
       };
 
@@ -425,6 +446,7 @@ class TableList extends Component<TableListProps, TableListState> {
     } = this.props;
 
     const { selectedRows, modalVisible, updateModalVisible, stepFormValues } = this.state;
+    // 更多菜单
     const menu = (
       <Menu onClick={this.handleMenuClick} selectedKeys={[]}>
         <Menu.Item key="remove">删除</Menu.Item>
@@ -470,6 +492,8 @@ class TableList extends Component<TableListProps, TableListState> {
             />
           </div>
         </Card>
+
+        {/* 弹框 ======== */}
         <CreateForm {...parentMethods} modalVisible={modalVisible} />
         {stepFormValues && Object.keys(stepFormValues).length ? (
           <UpdateForm
