@@ -134,7 +134,8 @@ export default {
   chainWebpack: webpackPlugin,
   proxy: {
     "/api/": {
-      // imooc提供API https://coding.imooc.com/class/179.html
+      // 借用imooc课程提供的API
+      // https://coding.imooc.com/class/179.html
       target: "http://adminv2.happymmall.com",
       changeOrigin: true,
       pathRewrite: { "^/api/": "" }

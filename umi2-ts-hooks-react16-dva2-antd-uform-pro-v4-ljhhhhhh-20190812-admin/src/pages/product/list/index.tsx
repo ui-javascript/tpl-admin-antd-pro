@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { PageHeaderWrapper } from "@ant-design/pro-layout";
 import { Dispatch } from "redux";
 import { Row, Col, Button, Divider, Popover } from 'antd';
@@ -20,6 +20,7 @@ interface TableListProps {
   };
 }
 
+// 搜索关键词
 interface SearchFormProps {
   searchValue?: string | number
   searchType?: string
@@ -27,8 +28,8 @@ interface SearchFormProps {
 }
 
 const List = (props: TableListProps) => {
-  const [selectedRows, SetRows] = useState([])
-  const [searchValue, SetSearchValue] = useState<SearchFormProps>({})
+  const [selectedRows, setRows] = useState([])
+  const [searchValue, setSearchValue] = useState<SearchFormProps>({})
 
   const { dispatch, product, loading } = props;
 
@@ -36,6 +37,7 @@ const List = (props: TableListProps) => {
     fetchList()
   }, [searchValue])
 
+  //
   const fetchList = useCallback((pageConfig?: any) => {
     const { pagination } = props.product;
     dispatch({
@@ -52,7 +54,8 @@ const List = (props: TableListProps) => {
       ...values,
       pageNum: 1
     }
-    SetSearchValue(data)
+    // 触发
+    setSearchValue(data)
   }
 
   const changeStatus = (item: any) => {
@@ -65,6 +68,7 @@ const List = (props: TableListProps) => {
         status: newStatus
       }
     })
+
   }
 
   const columns: ColumnProps<any>[] = [
@@ -123,7 +127,7 @@ const List = (props: TableListProps) => {
             <Popover content={statusObj.btnText}>
               <Button onClick={() => changeStatus(item)} shape="circle" icon={statusObj.btnIcon} type={statusObj.btnType}/>
             </Popover>
-            
+
           </>
         )
       }
@@ -146,7 +150,7 @@ const List = (props: TableListProps) => {
   ];
 
   const handleSelectRows = (rows: any) => {
-    SetRows(rows)
+    setRows(rows)
   };
 
   const handleStandardTableChange = (pagination: any) => {
@@ -190,6 +194,7 @@ const List = (props: TableListProps) => {
         cancelChange={() => cancelChange()}
         originName={selectedCategory.name}
       /> */}
+
       {/* {
         addModalShow && <CreateCategory 
                           toggleCreate={handleAddModalVisible} 

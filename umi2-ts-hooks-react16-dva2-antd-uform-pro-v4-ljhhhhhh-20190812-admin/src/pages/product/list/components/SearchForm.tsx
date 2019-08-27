@@ -35,6 +35,7 @@ const SearchForm = (props: searchFormProps) => {
         enum={categoryList}
         name="searchType"
       />
+
       <Field
         type="string"
         name="searchValue"
@@ -42,8 +43,9 @@ const SearchForm = (props: searchFormProps) => {
 
       <FormButtonGroup>
         <Submit>搜索</Submit>
-        <Reset />
+        <Reset>重置</Reset>
       </FormButtonGroup>
+
     </SchemaForm>
   )
 }

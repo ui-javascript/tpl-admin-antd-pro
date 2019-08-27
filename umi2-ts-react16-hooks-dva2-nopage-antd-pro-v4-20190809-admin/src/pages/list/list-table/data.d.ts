@@ -22,6 +22,7 @@ export interface TableListPagination {
 
 export interface TableListData {
   list: TableListItem[];
+  // Partial 可选
   pagination: Partial<TableListPagination>;
 }
 

@@ -15,12 +15,14 @@ export interface UserModelState {
 }
 
 export interface paginationProps {
-  pageNum: number;
+  pageNum: number
   total: number
 }
 
 export interface ProductStateProps {
+  // 数据
   list: any[],
+  // 分页
   pagination: paginationProps;
   // loading: boolean
 }
@@ -71,7 +73,9 @@ const Model: ModelType = {
         
         const state = yield select(state => state)
 
-        // 不需要重新请求列表，直接修改本地列表数据 Immutable.js提高效率?
+        // 不需要重新请求列表，直接修改本地列表数据
+        // Immutable.js提高效率?
+        // 其实就是假装 列表请求 ...
         const newList = state.product.list.map((item: any) => {
           if (item.id === payload.productId) {
             item.status = payload.status
@@ -79,6 +83,7 @@ const Model: ModelType = {
           }
           return item
         })
+
         yield put({
           type: 'changeStatus',
           payload: newList
@@ -110,6 +115,7 @@ const Model: ModelType = {
   reducers: {
     setList(state, { payload }) {
       return {
+        ...state,
         list: payload.list,
         pagination: {
           pageNum: payload.pageNum,

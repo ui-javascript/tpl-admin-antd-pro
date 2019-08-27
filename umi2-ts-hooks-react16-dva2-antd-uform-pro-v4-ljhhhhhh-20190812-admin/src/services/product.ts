@@ -71,6 +71,7 @@ export function setProductStatus(data: {productId: number, status: 1 | 2}) { // 
   })
 }
 
+// 产品
 export interface ProductProps {
   categoryId: number
   parentCategoryId: number

@@ -85,7 +85,7 @@ interface TableListState {
     };
   }) => ({
     listTableList,
-    loading: loading.models.rule,
+    loading: loading.models.listTableList,
   }),
 )
 class TableList extends Component<TableListProps, TableListState> {
@@ -98,6 +98,7 @@ class TableList extends Component<TableListProps, TableListState> {
     stepFormValues: {},
   };
 
+  // 表格列
   columns: StandardTableColumnProps[] = [
     {
       title: '规则名称',
@@ -110,6 +111,7 @@ class TableList extends Component<TableListProps, TableListState> {
     {
       title: '服务调用次数',
       dataIndex: 'callNo',
+      // 支持排序
       sorter: true,
       align: 'right',
       render: (val: string) => `${val} 万`,
@@ -137,6 +139,7 @@ class TableList extends Component<TableListProps, TableListState> {
           value: '3',
         },
       ],
+      // 返回一些string的数组类型
       render(val: IStatusMapType) {
         return <Badge status={statusMap[val]} text={status[val]} />;
       },
@@ -495,6 +498,7 @@ class TableList extends Component<TableListProps, TableListState> {
 
         {/* 弹框 ======== */}
         <CreateForm {...parentMethods} modalVisible={modalVisible} />
+
         {stepFormValues && Object.keys(stepFormValues).length ? (
           <UpdateForm
             {...updateMethods}

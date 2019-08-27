@@ -70,7 +70,8 @@ class Login extends Component<LoginProps, LoginState> {
     
     return (
       <div className={styles.main}>
-        <SchemaForm layout="vertical" onSubmit={this.handleSubmit} defaultValue={{isAdmin: true}}>
+
+        <SchemaForm layout="horizontal" onSubmit={this.handleSubmit} defaultValue={{ isAdmin: true }}>
           <Field
             type="string"
             required
@@ -82,11 +83,13 @@ class Login extends Component<LoginProps, LoginState> {
               prefix: <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
             }}
           />
+
           <Field
             type="password"
             name="password"
             required
             x-props={{
+              checkStrength: true,
               // checkStrength: true,
               prefix: <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />,
               // autoComplete: "new-password",
@@ -95,15 +98,18 @@ class Login extends Component<LoginProps, LoginState> {
               })}: admin`
             }}
           />
+
           <Field
             type="boolean"
             title={formatMessage({ id: "user-login.login.is-admin" })}
             name="isAdmin"
           />
+
           <FormButtonGroup>
             <Submit />
             <Reset />
           </FormButtonGroup>
+
         </SchemaForm>
       </div>
     );
