@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import dynamic from 'umi/dynamic';
+
 import {
   Badge,
   Button,
@@ -25,12 +27,17 @@ import { connect } from 'dva';
 import moment from 'moment';
 
 import { StateType } from './model';
-import CreateForm from './components/CreateForm';
+// import CreateForm from './components/CreateForm';
+
 import StandardTable, { StandardTableColumnProps } from './components/StandardTable';
-import UpdateForm, { FormValsType } from './components/UpdateForm';
+import { FormValsType } from './components/UpdateForm';
 import { TableListItem, TableListPagination, TableListParams } from './data.d';
 
 import styles from './style.less';
+
+// 懒加载弹框组件
+const CreateForm: any = dynamic({ loader: () => import('./components/CreateForm') });
+const UpdateForm: any = dynamic({ loader: () => import('./components/UpdateForm') });
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -465,6 +472,7 @@ class TableList extends Component<TableListProps, TableListState> {
       handleUpdateModalVisible: this.handleUpdateModalVisible,
       handleUpdate: this.handleUpdate,
     };
+    // @ts-ignore
     return (
       <PageHeaderWrapper>
         <Card bordered={false}>
@@ -497,8 +505,7 @@ class TableList extends Component<TableListProps, TableListState> {
         </Card>
 
         {/* 弹框 ======== */}
-        <CreateForm {...parentMethods} modalVisible={modalVisible} />
-
+        {modalVisible && <CreateForm {...parentMethods} modalVisible={modalVisible} />}
         {stepFormValues && Object.keys(stepFormValues).length ? (
           <UpdateForm
             {...updateMethods}
