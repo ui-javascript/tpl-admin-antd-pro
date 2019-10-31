@@ -80,10 +80,7 @@ export interface UserRegisterParams {
     submitting: loading.effects['userRegister/submit'],
   }),
 )
-class Register extends Component<
-  RegisterProps,
-  RegisterState
-> {
+class Register extends Component<RegisterProps, RegisterState> {
   state: RegisterState = {
     count: 0,
     confirmDirty: false,
@@ -342,7 +339,9 @@ class Register extends Component<
                 })(
                   <Input
                     size="large"
-                    placeholder={formatMessage({ id: 'user-register.verification-code.placeholder' })}
+                    placeholder={formatMessage({
+                      id: 'user-register.verification-code.placeholder',
+                    })}
                   />,
                 )}
               </Col>
@@ -370,7 +369,7 @@ class Register extends Component<
             >
               <FormattedMessage id="user-register.register.register" />
             </Button>
-            <Link className={styles.login} to="/user/login">
+            <Link className={styles.login} to="/user/user-login">
               <FormattedMessage id="user-register.register.sign-in" />
             </Link>
           </FormItem>

@@ -193,6 +193,7 @@ class UpdateForm extends PureComponent {
         </FormItem>,
       ];
     }
+    
     return [
       <FormItem key="name" {...this.formLayout} label="规则名称">
         {form.getFieldDecorator('name', {
