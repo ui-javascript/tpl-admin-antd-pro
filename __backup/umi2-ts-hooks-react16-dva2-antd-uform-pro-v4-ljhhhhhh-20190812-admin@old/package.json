@@ -26,7 +26,6 @@
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components"
   },
-  "husky": {},
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
@@ -91,7 +90,6 @@
     "enzyme": "^3.9.0",
     "eslint": "^5.16.0",
     "gh-pages": "^2.0.1",
-    "husky": "^3.0.0",
     "import-sort-cli": "^6.0.0",
     "import-sort-parser-babylon": "^6.0.0",
     "import-sort-parser-typescript": "^6.0.0",

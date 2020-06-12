@@ -45,7 +45,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^0.14.3",
     "lint-staged": "^7.3.0",
     "mockjs": "^1.0.1-beta3",
     "nowrapper": "^1.0.24",
