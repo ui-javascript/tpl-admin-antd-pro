@@ -102,10 +102,7 @@ const TagList: React.FC<{ tags: CurrentUser['tags'] }> = ({ tags }) => {
   );
 };
 
-class Center extends Component<
-  CenterProps,
-  CenterState
-> {
+class Center extends Component<CenterProps, CenterState> {
   // static getDerivedStateFromProps(
   //   props: accountAndcenterProps,
   //   state: accountAndcenterState,

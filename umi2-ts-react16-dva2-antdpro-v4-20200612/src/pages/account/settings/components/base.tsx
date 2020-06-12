@@ -23,7 +23,10 @@ const AvatarView = ({ avatar }: { avatar: string }) => (
       <div className={styles.button_view}>
         <Button>
           <UploadOutlined />
-          <FormattedMessage id="accountandsettings.basic.change-avatar" defaultMessage="Change avatar" />
+          <FormattedMessage
+            id="accountandsettings.basic.change-avatar"
+            defaultMessage="Change avatar"
+          />
         </Button>
       </div>
     </Upload>

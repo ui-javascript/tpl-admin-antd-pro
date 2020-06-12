@@ -19,11 +19,7 @@ interface ArticlesProps {
   listAndsearchAndarticles: StateType;
   loading: boolean;
 }
-const Articles: FC<ArticlesProps> = ({
-  dispatch,
-  listAndsearchAndarticles: { list },
-  loading,
-}) => {
+const Articles: FC<ArticlesProps> = ({ dispatch, listAndsearchAndarticles: { list }, loading }) => {
   const [form] = Form.useForm();
   useEffect(() => {
     dispatch({

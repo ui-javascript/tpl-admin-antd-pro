@@ -17,12 +17,18 @@ class NotificationView extends Component {
     return [
       {
         title: formatMessage({ id: 'accountandsettings.notification.password' }, {}),
-        description: formatMessage({ id: 'accountandsettings.notification.password-description' }, {}),
+        description: formatMessage(
+          { id: 'accountandsettings.notification.password-description' },
+          {},
+        ),
         actions: [Action],
       },
       {
         title: formatMessage({ id: 'accountandsettings.notification.messages' }, {}),
-        description: formatMessage({ id: 'accountandsettings.notification.messages-description' }, {}),
+        description: formatMessage(
+          { id: 'accountandsettings.notification.messages-description' },
+          {},
+        ),
         actions: [Action],
       },
       {

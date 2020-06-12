@@ -40,13 +40,18 @@ const content = (
     >
       <Descriptions.Item
         label={
-          <FormattedMessage id="resultandsuccess.success.operate-id" defaultMessage="Project ID：" />
+          <FormattedMessage
+            id="resultandsuccess.success.operate-id"
+            defaultMessage="Project ID："
+          />
         }
       >
         23421
       </Descriptions.Item>
       <Descriptions.Item
-        label={<FormattedMessage id="resultandsuccess.success.principal" defaultMessage="Principal：" />}
+        label={
+          <FormattedMessage id="resultandsuccess.success.principal" defaultMessage="Principal：" />
+        }
       >
         <FormattedMessage id="resultandsuccess.success.step1-operator" defaultMessage="Qu Lili" />
       </Descriptions.Item>
@@ -66,7 +71,10 @@ const content = (
       <Step
         title={
           <span style={{ fontSize: 14 }}>
-            <FormattedMessage id="resultandsuccess.success.step1-title" defaultMessage="Create project" />
+            <FormattedMessage
+              id="resultandsuccess.success.step1-title"
+              defaultMessage="Create project"
+            />
           </span>
         }
         description={desc1}

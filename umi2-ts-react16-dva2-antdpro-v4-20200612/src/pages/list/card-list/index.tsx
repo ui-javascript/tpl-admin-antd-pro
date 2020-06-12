@@ -21,10 +21,7 @@ interface CardListState {
   current?: Partial<CardListItemDataType>;
 }
 
-class CardList extends Component<
-  CardListProps,
-  CardListState
-> {
+class CardList extends Component<CardListProps, CardListState> {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({

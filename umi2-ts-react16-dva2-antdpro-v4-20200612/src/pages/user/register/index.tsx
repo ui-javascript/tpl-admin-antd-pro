@@ -52,11 +52,7 @@ export interface UserRegisterParams {
   prefix: string;
 }
 
-const Register: FC<RegisterProps> = ({
-  submitting,
-  dispatch,
-  userAndregister,
-}) => {
+const Register: FC<RegisterProps> = ({ submitting, dispatch, userAndregister }) => {
   const [count, setcount]: [number, any] = useState(0);
   const [visible, setvisible]: [boolean, any] = useState(false);
   const [prefix, setprefix]: [string, any] = useState('86');
@@ -180,7 +176,10 @@ const Register: FC<RegisterProps> = ({
             },
           ]}
         >
-          <Input size="large" placeholder={formatMessage({ id: 'userandregister.email.placeholder' })} />
+          <Input
+            size="large"
+            placeholder={formatMessage({ id: 'userandregister.email.placeholder' })}
+          />
         </FormItem>
         <Popover
           getPopupContainer={(node) => {

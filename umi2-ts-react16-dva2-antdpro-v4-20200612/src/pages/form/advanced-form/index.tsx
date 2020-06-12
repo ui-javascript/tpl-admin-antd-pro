@@ -59,10 +59,7 @@ interface ErrorField {
   errors: string[];
 }
 
-const AdvancedForm: FC<AdvancedFormProps> = ({
-  submitting,
-  dispatch,
-}) => {
+const AdvancedForm: FC<AdvancedFormProps> = ({ submitting, dispatch }) => {
   const [form] = Form.useForm();
   const [error, setError] = useState<ErrorField[]>([]);
   const getErrorInfo = (errors: ErrorField[]) => {
