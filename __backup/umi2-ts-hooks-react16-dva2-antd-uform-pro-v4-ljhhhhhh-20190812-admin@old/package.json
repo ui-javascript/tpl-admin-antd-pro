@@ -45,7 +45,7 @@
     "@antv/data-set": "^0.10.2",
     "@uform/antd": "^0.3.10",
     "antd": "^3.21.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "braft-editor": "^2.3.7",
     "classnames": "^2.2.6",
     "dva": "^2.4.1",
