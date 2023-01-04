@@ -1010,10 +1010,10 @@
     less-loader "^5.0.0"
     tapable "^2.0.0-beta.3"
 
-"@pawjs/pawjs@^2.2.6":
+"@pawjs/pawjs@^2.3.2":
   version "2.3.2"
-  resolved "https://registry.npm.taobao.org/@pawjs/pawjs/download/@pawjs/pawjs-2.3.2.tgz#3afba6fcf78ee6439f7bab1c8ff3442f37ad724d"
-  integrity sha1-Ovum/PeO5kOfe6scj/NELzetck0=
+  resolved "https://registry.yarnpkg.com/@pawjs/pawjs/-/pawjs-2.3.2.tgz#3afba6fcf78ee6439f7bab1c8ff3442f37ad724d"
+  integrity sha512-YJdedRRHemymGgAZqlaqK1eWUoeooZxLOWkXCggOOMPNBhZf2VIKMCNyI1KhwvQTfnr95PClOGq5IWIX83sQ0A==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.3.3"
